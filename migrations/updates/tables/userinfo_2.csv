@@ -1,0 +1,6 @@
+id;user_id;lang;aboutme;birthdate;hometown
+1;1;HU;Próba Béla vagyok;1980-05-02;Budapest
+2;2;EN;I’m a fake user; ; 
+3;4;EN;I’m a test user;1970-06-05;New York
+4;3;EN;I’m a test user;1960-06-06;Prague
+5;5;FR;I’m a deleted user;1950-05-06; 

@@ -1,0 +1,6 @@
+id;status;email;name;lang;created;modified
+1;ACT;proba@bela.hu;bela;EN;2009-09-28 17:25;2013-02-03 20:53
+2;TEMP;fake@fakedomain.com;fake;EN;2009-09-28 17:29;2009-09-28 17:29
+3;ACT;test@user.com;user;DE;2009-9-29 14:59;2013-02-03 19:28
+4;ACT;test@test.com;test;EN;2009-10-16 20:35;2013-01-26 14:04
+5;DEL;del@deleted.com;del;FR;2009-09-30 14:10;2013-01-30 19:46

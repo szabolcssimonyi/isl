@@ -1,6 +1,0 @@
-Azonosító ,Státusz ,Email cím ,Felhasználó név ,Alapértelmezett nyelv ,Létrehozva ekkor ,Utolsó bejelentkezés 
-1,ACT,proba@bela.hu,bela,EN,9/28/2009 17:25,2/3/2013 20:53
-2,TEMP,fake@fakedomain.com,fake,EN,9/28/2009 17:29,9/28/2009 17:29
-3,ACT,test@user.com,user,DE,9/29/2009 14:59,2/3/2013 19:28
-4,ACT,test@test.com,test,EN,10/16/2009 20:35,1/26/2013 14:04
-5,DEL,del@deleted.com,del,FR,9/30/2009 14:10,1/30/2013 19:46
