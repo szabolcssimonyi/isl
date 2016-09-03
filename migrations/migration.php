@@ -27,7 +27,7 @@ class MigrationExecutor{
     
     private function loadStatements(){
         foreach(glob('./updates/*.sql') as $path){
-            $this->statements=array_merge($this->statements,  explode(";",file_get_contents($path)));
+            $this->statements=array_merge($this->statements,  explode("---",file_get_contents($path)));
         }
     }
     

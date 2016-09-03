@@ -13,7 +13,7 @@ CREATE TABLE `users` (
   KEY `i_users_created` (`created`),
   KEY `i_users_modified` (`modified`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+---
 CREATE TABLE `userinfo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE `userinfo` (
   KEY `fk_userinfo_user_idx` (`user_id`),
   CONSTRAINT `fk_userinfo_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+---
 CREATE TABLE `forms` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(45) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `forms` (
   KEY `fk_forms_users_idx` (`user_id`),
   CONSTRAINT `fk_forms_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+---
 CREATE TABLE `downloads` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `form_id` int(11) NOT NULL,
@@ -56,3 +56,10 @@ CREATE TABLE `downloads` (
   CONSTRAINT `fk_downloads_forms` FOREIGN KEY (`form_id`) REFERENCES `forms` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `fk_downloads_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+---
+CREATE TRIGGER `isl`.`downloads_AFTER_INSERT` 
+AFTER INSERT ON `downloads` FOR EACH ROW
+BEGIN
+update forms set downloads=downloads+1 where id=NEW.form_id;
+END
+---
