@@ -1,0 +1,7 @@
+{
+    "name": "szabi",
+    "require":{
+        "components/jquery":"3.*",
+        "components/bootstrap":"v3.*"
+    }
+}
