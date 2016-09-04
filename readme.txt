@@ -8,3 +8,5 @@ Install:
     a migráció folymatát láthatod a command ablakban
 3. Állítsd a html szerver munkakönyvtárát a [saját mappa]/isl/web könyvtárra
 4. Az alkalmazás futtatható böngészőben a localhost címről
+
+Az adatbázis táblák dump file-okból is feltölthetők a Dump20160904-1 könyvtárból
