@@ -8,6 +8,8 @@
         <script src="<?=baseUrl;?>js/bootstrap.js" type="text/javascript"></script>
         <link href="<?=baseUrl;?>css/dashboard.css" rel="stylesheet" type="text/css"/>
         <script src="<?=baseUrl;?>js/app.js" type="text/javascript"></script>
+        <link href="<?=baseUrl;?>css/css.css" rel="stylesheet" type="text/css"/>
+        <link href="<?=baseUrl;?>css/font-awesome.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -22,8 +24,19 @@
                     <a class="navbar-brand" href="#">ISL teszt alkalmazás</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                      <li><a href="#">Dashboard</a></li>
+                    <ul class="nav navbar-nav navbar-right" data-target="menu">
+                        <li class="active">
+                            <a href="#" data-tag="users" onclick="loadData('index.php?option=users');" >Felhasználók</a>
+                        </li>
+                        <li>
+                            <a href="#" data-tag="downloads"  onclick="loadData('index.php?option=users&view=downloads');">Letöltések</a>
+                        </li>
+                        <li>
+                            <a href="#" data-tag="favorites" onclick="loadData('index.php?option=users&view=favorites');">Kedvenc feladatlapok</a>
+                        </li>
+                        <li>
+                            <a href="#" data-tag="error" onclick="loadData('index.php?option=users&view=error');">Hibás link</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -31,27 +44,36 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
-                    <ul class="nav nav-sidebar">
+                    <ul class="nav nav-sidebar" data-target="menu">
+                        <li class="menu-header">
+                            Menü
+                        </li>
                         <li class="active">
-                            <a href="#">
-                                Overview
-                                <span class="sr-only">(current)</span>
-                            </a>
+                            <a href="#" data-tag="users" onclick="loadData('index.php?option=users');" >Felhasználók</a>
                         </li>
                         <li>
-                            <a href="#" onclick="loadData('index.php?option=users');">Felhasználók</a>
+                            <a href="#" data-tag="downloads"  onclick="loadData('index.php?option=users&view=downloads');">Letöltések</a>
                         </li>
                         <li>
-                            <a href="#" onclick="loadData('index.php?option=users&view=downloads');">Letöltések</a>
+                            <a href="#" data-tag="favorites" onclick="loadData('index.php?option=users&view=favorites');">Kedvenc feladatlapok</a>
                         </li>
                         <li>
-                            <a href="#" onclick="loadData('index.php?option=users&view=favorites');">Kedvenc feladatlapok</a>
+                            <a href="#" data-tag="error" onclick="loadData('index.php?option=users&view=error');">Hibás link</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                    <h2 class="page-header">Dashboard</h2>
-                    <?php print_r($content);?>
+                    <h2 class="page-header">Tartalom</h2>
+                    <div class="row loader-container">
+                        <div class="col-sm-2 col-sm-offset-5 loader">
+                            <i class="fa fa-cog fa-spin fa-5x fa-fw" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row content-container">
+                        <div class="col-md-12">
+                            <?php print_r($content);?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,9 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/www/isl/views/layout/main.php</file>
-            <file>file:/D:/www/isl/web/js/app.js</file>
-            <file>file:/D:/www/isl/controllers/ControllerBase.php</file>
+            <file>file:/D:/www/isl/models/Error.php</file>
+            <file>file:/D:/www/isl/views/error/error.php</file>
             <file>file:/D:/www/isl/views/default/index.php</file>
+            <file>file:/D:/www/isl/controllers/UsersController.php</file>
+            <file>file:/D:/www/isl/views/error/index.php</file>
+            <file>file:/D:/www/isl/web/js/app.js</file>
+            <file>file:/D:/www/isl/controllers/ErrorController.php</file>
+            <file>file:/D:/www/isl/models/Users.php</file>
+            <file>file:/D:/www/isl/controllers/ControllerBase.php</file>
+            <file>file:/D:/www/isl/models/Application.php</file>
+            <file>file:/D:/www/isl/views/users/index.php</file>
+            <file>file:/D:/www/isl/models/ModelBase.php</file>
             <file>file:/D:/www/isl/web/index.php</file>
         </group>
     </open-files>

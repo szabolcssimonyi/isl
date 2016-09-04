@@ -32,6 +32,7 @@ class Users extends ModelBase{
                     INNER JOIN users on users.id=clicks.user_id
                     GROUP BY forms.id, users.id
                     LIMIT 10;";
+        $this->data=[];
         return $this->getItems();
     }
     

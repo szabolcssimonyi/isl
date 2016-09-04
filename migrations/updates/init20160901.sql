@@ -57,7 +57,7 @@ CREATE TABLE `downloads` (
   CONSTRAINT `fk_downloads_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ---
-CREATE TRIGGER `isl`.`downloads_AFTER_INSERT` 
+CREATE TRIGGER `downloads_AFTER_INSERT` 
 AFTER INSERT ON `downloads` FOR EACH ROW
 BEGIN
 update forms set downloads=downloads+1 where id=NEW.form_id;

@@ -2,6 +2,7 @@
     "name": "szabi",
     "require":{
         "components/jquery":"3.*",
-        "components/bootstrap":"v3.*"
+        "components/bootstrap":"v3.*",
+        "components/font-awesome":"4.6.*"
     }
 }
