@@ -10,3 +10,14 @@ Install:
 4. Az alkalmazás futtatható böngészőben a localhost címről
 
 Az adatbázis táblák dump file-okból is feltölthetők a Dump20160904-1 könyvtárból
+
+Működés:
+
+Egy egyszerű MVC került megvalódításra. A bejövő kérések adatait feldolgozva az Application objektum létrehozza a specializált
+controller osztályt a controllers könyvtárból. Ehhez az url "option" get vagy post adatát használja.
+A controller lefuttatja magán a szükséges metodust (action), amit az url "view" adattagjából vesz.
+A metodusban létjön a szükséges model objektum a models könyvtárból, amivel futtatni lehet a szükséges adatgyüjtési eljárást.
+A üsszegyűjtött adatokat a controller átaja a view-nak ami megjeleníti a layout-ot az adatokkal a views könyvtárból.
+
+A kliens oldalon egy jquery applikáció kezeli a szükséges DOM manipulációkat. A szűrés és rendezés is itt kerül megvalósításra.
+Az adatok lekérdezése AJAX/JSON segítségével történik.
