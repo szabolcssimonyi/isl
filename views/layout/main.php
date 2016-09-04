@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>Teszt oldal</title>
-        <script src="<?=baseUrl;?>js/jquery.js" type="text/javascript"></script>
-        <link href="<?=baseUrl;?>css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <script src="<?=baseUrl;?>js/bootstrap.js" type="text/javascript"></script>
-        <link href="<?=baseUrl;?>css/dashboard.css" rel="stylesheet" type="text/css"/>
-        <script src="<?=baseUrl;?>js/app.js" type="text/javascript"></script>
-        <link href="<?=baseUrl;?>css/css.css" rel="stylesheet" type="text/css"/>
-        <link href="<?=baseUrl;?>css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <script src="<?=baseUrl;?>web/js/jquery.js" type="text/javascript"></script>
+        <link href="<?=baseUrl;?>web/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="<?=baseUrl;?>web/js/bootstrap.js" type="text/javascript"></script>
+        <link href="<?=baseUrl;?>web/css/dashboard.css" rel="stylesheet" type="text/css"/>
+        <script src="<?=baseUrl;?>web/js/app.js" type="text/javascript"></script>
+        <link href="<?=baseUrl;?>web/css/css.css" rel="stylesheet" type="text/css"/>
+        <link href="<?=baseUrl;?>web/css/font-awesome.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">

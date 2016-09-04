@@ -43,7 +43,7 @@ abstract class ModelBase implements IModel{
     }
     
     public function getItems() {
-        if(!$this->connect()){
+        if(!$this->connect()){            
             return false;
         }
         $stm=$this->db->prepare($this->query);

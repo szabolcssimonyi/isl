@@ -9,7 +9,7 @@ class UsersController extends ControllerBase{
         $model=$this->createModel();
         $data=$model->getItems();
         if($data===false){
-            $this->errorAction();
+            $this->errorAction("data is null");
             return;
         }
         $this->renderView('index', ['model'=>$data,'title'=>'Felhasználók']);
@@ -19,7 +19,7 @@ class UsersController extends ControllerBase{
         $model=$this->createModel();
         $data=$model->getDownloads();
         if($data===false){
-            $this->errorAction();
+            $this->errorAction("data is null");
             return;
         }
         $this->renderView('index',['model'=>$data,'title'=>'Letöltések']);
@@ -28,7 +28,7 @@ class UsersController extends ControllerBase{
         $model=$this->createModel();
         $data=$model->getFavorites();
         if($data===false){
-            $this->errorAction();
+            $this->errorAction("data is null");
             return;
         }
         $this->renderView('index',['model'=>$data,'title'=>'Kedvenc feladatlapok']);

@@ -2,14 +2,20 @@
 require_once __DIR__ .'/../interfaces/IController.php';
 class ControllerBase implements IController{
     
-    private $modelPath=__DIR__ .'/../models/';
-    private $viewPath=__DIR__ .'/../views/';
-    protected $target=false;
-    protected $action=false;
-    protected $format='html';
-    protected $layout="main";
+    private $modelPath;
+    private $viewPath;
+    protected $target;
+    protected $action;
+    protected $format;
+    protected $layout;
     
     public function __construct($config) {
+        $this->modelPath=__DIR__ .'/../models/';
+        $this->viewPath=__DIR__ .'/../views/';
+        $this->target=false;
+        $this->action=false;
+        $this->format='html';
+        $this->layout='main';
         $this->target=strtolower($config['target']);
         $this->format=$config['format'];
         $rc=new ReflectionClass($this->target.'Controller');
@@ -25,12 +31,12 @@ class ControllerBase implements IController{
     }
     
     protected function createModel($params=[]){
-        if(!class_exists($this->modelPath.$this->target.'.php')){
-            $path=$this->modelPath.$this->target.'.php';
+        if(!class_exists($this->modelPath.ucfirst($this->target).'.php')){
+            $path=$this->modelPath.ucfirst($this->target).'.php';
             require_once $path;
         }
         if(class_exists($this->target)){
-            $reflaction=new ReflectionClass($this->target);
+            $reflaction=new ReflectionClass(ucfirst($this->target));
             if(!$reflaction->isAbstract() && $reflaction->implementsInterface("IModel")){
                 $params['target']=$this->target;
                 return  $reflaction->newInstance($params);                            
@@ -39,10 +45,10 @@ class ControllerBase implements IController{
         return false;
     }
     
-    public function errorAction(){
+    public function errorAction($error="no information"){
         $this->action="error";
         $this->target="error";
-        return $this->renderView($this->action);
+        return $this->renderView($this->action,['error'=>$error]);
     }
     
     public function indexAction(){        
